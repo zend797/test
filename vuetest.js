@@ -1,5 +1,5 @@
 /* exports.somefunction = function () {
-    
+
     console.log('fck yeah! vue added');
 
 };
@@ -11,5 +11,5 @@
      el: '#mail',
      data: {
         message: 'atatat'
-     }
+     },
  })
