@@ -2,58 +2,60 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>vue test</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
-        crossorigin="anonymous">
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>vue test</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script> -->
 </head>
 
 <body>
-    <div class="test" id="mail" style="position:absolute; top:200px; left:0; right:0; margin: auto; width: 320px">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon1">@</span>
-                        <input type="text" id="input" class="form-control" placeholder="Zzzz" aria-describedby="basic-addon1" v-model="message">
-                    </div>
-                </div>
-            </div>
-            <p style="position:relative; margin-top:10px">mail input: {{ message }}</p>
+  <div class="test" id="mail" style="position:absolute; top:200px; left:0; right:0; margin: auto; width: 320px">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">@</span>
+            <input type="text" id="input" class="form-control" placeholder="Zzzz" aria-describedby="basic-addon1" v-model="message">
+          </div>
         </div>
+      </div>
+      <p style="position:relative; margin-top:10px">mail input: {{ message }}</p>
     </div>
+  </div>
 
-    <div class="test" style="position:absolute; top:300px; left:50%; transform: translateX(-50%); width: 320px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon1">O</span>
-                        <input type="text" id="input2" class="form-control" placeholder="atataata" aria-describedby="basic-addon1">
-                    </div>
-                </div>
-            </div>
+  <div class="test" style="position:absolute; top:300px; left:50%; transform: translateX(-50%); width: 320px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">O</span>
+            <input type="text" id="input2" class="form-control" placeholder="atataata" aria-describedby="basic-addon1">
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 
-<div id="app">
-    <h1>{{message}}</h1>
-</div>
-    <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
-    <script src="vuetest.js"></script>
-    <script >
-
-     var app = new Vue({
-       el: '#app',
-       data: {
-         message: 'another one'
-       }
-     })
-     
-   </script>
+  <div id="app">
+    <h1 v-text="message"></h1>
+    <h2 v-html="intro" v-show="shown"></h2>
+    <h3 v-if="rmv">remove el</h3>
+  </div>
+  <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+  <script src="vuetest.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'another one',
+        intro: '<em>two threr 4</em>',
+        shown: true,
+        rmv: true
+      }
+    })
+  </script>
 
 </body>
 
